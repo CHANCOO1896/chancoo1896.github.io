@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[记6种常见的设计模式-Javascript]]></title>
-    <url>%2F2018%2F09%2F10%2F%E8%AE%B06%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Javascript%2F</url>
-    <content type="text"><![CDATA[1、构造函数模式12345678910111213/** * 构造一个对象函数 */function Animal(name, color)&#123; this.name = name; this.color = color; this.getName = function()&#123; return this.name; &#125;&#125;// 实例一个对象var cat = new Animal('狗', '黑色');console.log( cat.getName() ); 2、工厂模式1234567891011121314/** * 工厂模式 */function Animal(opts)&#123; var obj = new Object(); obj.name = opts.name; obj.color = opts.color; obj.getInfo = function()&#123; return '名称：'+obj.name +'， 颜色：'+ obj.color; &#125; return obj;&#125;var cat = Animal(&#123;name: '藏獒', color: '灰褐色'&#125;);cat.getInfo(); 3、单例模式1234567891011121314151617181920212223242526/** * 在执行当前 Single 获得唯一对象 */var Single = (function()&#123; var instance; function init() &#123; //define private methods and properties //do something return &#123; //define public methods and properties &#125;; &#125; return &#123; // 获取实例 getInstance:function()&#123; if(!instance)&#123; instance = init(); &#125; return instance; &#125; &#125;&#125;)();var obj1 = Single.getInstance();var obj2 = Single.getInstance();console.log(obj1 === obj2); 4、发布订阅模式12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * 发布订阅模式 */var EventCenter = (function()&#123; var events = &#123;&#125;; /* &#123; my_event: [&#123;handler: function(data)&#123;xxx&#125;&#125;, &#123;handler: function(data)&#123;yyy&#125;&#125;] &#125; */ // 绑定事件 添加回调 function on(evt, handler)&#123; events[evt] = events[evt] || []; events[evt].push(&#123; handler:handler &#125;) &#125; function fire(evt, arg)&#123; if(!events[evt])&#123; return &#125; for(var i=0; i &lt; events[evt].length; i++)&#123; events[evt][i].handler(arg); &#125; &#125; function off(evt)&#123; delete events[evt]; &#125; return &#123; on:on, fire:fire, off:off &#125;&#125;());var number = 1;EventCenter.on('click', function(data)&#123; console.log('click 事件' + data + number++ +'次');&#125;);EventCenter.off('click'); // 只绑定一次EventCenter.on('click', function(data)&#123; console.log('click 事件' + data + number++ +'次');&#125;);EventCenter.fire('click', '绑定'); 5 、模块模式123456789101112131415161718/** * 模块模式 = 封装大部分代码，只暴露必需接口 */var Car = (function()&#123; var name = '兰博基尼'; function sayName()&#123; console.log( name ); &#125; function getColor(name)&#123; console.log( name ); &#125; return &#123; name: sayName, color: getColor &#125;&#125;)();Car.name();Car.color('红色'); 6、混合模式1234567891011121314151617181920212223242526272829303132/** * 混合模式 = 原型模式 + 构造函数模式 */function Animal(name, color)&#123; this.name = name; this.color = color; console.log( this.name + this.color)&#125;Animal.prototype.getInfo = function()&#123; console.log('名称：'+ this.name);&#125;function largeCat(name, color)&#123; Animal.call(null, name, color); this.color = color;&#125;largeCat.prototype = create(Animal.prototype);function create (parentObj)&#123; function F()&#123;&#125; F.prototype = parentObj; return new F();&#125;;largeCat.prototype.getColor = function()&#123; return this.color;&#125;var cat = new largeCat("Persian", "白色");console.log( cat )]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>JS</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[每日一句]]></title>
     <url>%2F2018%2F09%2F10%2F2018-09-10%2F</url>
     <content type="text"><![CDATA[Others can’t save you, but you can only save yourself. 别人救不了你，而你只能自救！]]></content>
@@ -154,6 +141,19 @@
       </categories>
       <tags>
         <tag>每日一句</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[记6种常见的设计模式-Javascript]]></title>
+    <url>%2F2018%2F05%2F10%2F%E8%AE%B06%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-Javascript%2F</url>
+    <content type="text"><![CDATA[1、构造函数模式12345678910111213/** * 构造一个对象函数 */function Animal(name, color)&#123; this.name = name; this.color = color; this.getName = function()&#123; return this.name; &#125;&#125;// 实例一个对象var cat = new Animal('狗', '黑色');console.log( cat.getName() ); 2、工厂模式1234567891011121314/** * 工厂模式 */function Animal(opts)&#123; var obj = new Object(); obj.name = opts.name; obj.color = opts.color; obj.getInfo = function()&#123; return '名称：'+obj.name +'， 颜色：'+ obj.color; &#125; return obj;&#125;var cat = Animal(&#123;name: '藏獒', color: '灰褐色'&#125;);cat.getInfo(); 3、单例模式1234567891011121314151617181920212223242526/** * 在执行当前 Single 获得唯一对象 */var Single = (function()&#123; var instance; function init() &#123; //define private methods and properties //do something return &#123; //define public methods and properties &#125;; &#125; return &#123; // 获取实例 getInstance:function()&#123; if(!instance)&#123; instance = init(); &#125; return instance; &#125; &#125;&#125;)();var obj1 = Single.getInstance();var obj2 = Single.getInstance();console.log(obj1 === obj2); 4、发布订阅模式12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * 发布订阅模式 */var EventCenter = (function()&#123; var events = &#123;&#125;; /* &#123; my_event: [&#123;handler: function(data)&#123;xxx&#125;&#125;, &#123;handler: function(data)&#123;yyy&#125;&#125;] &#125; */ // 绑定事件 添加回调 function on(evt, handler)&#123; events[evt] = events[evt] || []; events[evt].push(&#123; handler:handler &#125;) &#125; function fire(evt, arg)&#123; if(!events[evt])&#123; return &#125; for(var i=0; i &lt; events[evt].length; i++)&#123; events[evt][i].handler(arg); &#125; &#125; function off(evt)&#123; delete events[evt]; &#125; return &#123; on:on, fire:fire, off:off &#125;&#125;());var number = 1;EventCenter.on('click', function(data)&#123; console.log('click 事件' + data + number++ +'次');&#125;);EventCenter.off('click'); // 只绑定一次EventCenter.on('click', function(data)&#123; console.log('click 事件' + data + number++ +'次');&#125;);EventCenter.fire('click', '绑定'); 5 、模块模式123456789101112131415161718/** * 模块模式 = 封装大部分代码，只暴露必需接口 */var Car = (function()&#123; var name = '兰博基尼'; function sayName()&#123; console.log( name ); &#125; function getColor(name)&#123; console.log( name ); &#125; return &#123; name: sayName, color: getColor &#125;&#125;)();Car.name();Car.color('红色'); 6、混合模式1234567891011121314151617181920212223242526272829303132/** * 混合模式 = 原型模式 + 构造函数模式 */function Animal(name, color)&#123; this.name = name; this.color = color; console.log( this.name + this.color)&#125;Animal.prototype.getInfo = function()&#123; console.log('名称：'+ this.name);&#125;function largeCat(name, color)&#123; Animal.call(null, name, color); this.color = color;&#125;largeCat.prototype = create(Animal.prototype);function create (parentObj)&#123; function F()&#123;&#125; F.prototype = parentObj; return new F();&#125;;largeCat.prototype.getColor = function()&#123; return this.color;&#125;var cat = new largeCat("Persian", "白色");console.log( cat )]]></content>
+      <categories>
+        <category>前端框架</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>JS</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
