@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="少年恋晚安">
 <meta property="og:description" content="一、redis为什么这么快：1、纯内存操作2、单线程操作，避免了频繁的上下文切换3、采用了非阻塞I/O 多路复用机制     二、redis使用中有哪些问题；1、缓存和数据库双写一致性问题2、缓存雪崩问题3、缓存击穿问题4、缓存并发竞争问题     三、redis问题解决方案：1、缓存和数据库双写一致性问题解决方案前提是对数据有强一致性要求，不能放缓存；只能降低不一致发生的概率，无法完全避免；只能">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T13:23:18.229Z">
+<meta property="og:updated_time" content="2018-09-27T13:27:37.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis使用遇到的问题总结">
 <meta name="twitter:description" content="一、redis为什么这么快：1、纯内存操作2、单线程操作，避免了频繁的上下文切换3、采用了非阻塞I/O 多路复用机制     二、redis使用中有哪些问题；1、缓存和数据库双写一致性问题2、缓存雪崩问题3、缓存击穿问题4、缓存并发竞争问题     三、redis问题解决方案：1、缓存和数据库双写一致性问题解决方案前提是对数据有强一致性要求，不能放缓存；只能降低不一致发生的概率，无法完全避免；只能">
@@ -434,7 +434,7 @@
 <h3 id="3、缓存穿透解决方案"><a href="#3、缓存穿透解决方案" class="headerlink" title="3、缓存穿透解决方案"></a>3、缓存穿透解决方案</h3><p>（大并发项目，流量在几百万）<br>-利用互斥锁<br>-采用异步更新策略，无论Key是否取到值都直接返回<br>-提供一个能迅速判断请求是否有效的拦截机制（布隆过滤器）  </p>
 <h3 id="4、缓存并发竞争解决方案"><a href="#4、缓存并发竞争解决方案" class="headerlink" title="4、缓存并发竞争解决方案"></a>4、缓存并发竞争解决方案</h3><p>-不要求顺序时，准备一个分布式锁，同时去抢锁，然后在set操作。<br>-要求顺序时，在数据写入数据库时，需要保存一个时间戳。<br>-利用队列，将set操作变成串行访问。  </p>
 <h2 id="四、redis删除机制-内存淘汰机制："><a href="#四、redis删除机制-内存淘汰机制：" class="headerlink" title="四、redis删除机制+内存淘汰机制："></a>四、redis删除机制+内存淘汰机制：</h2><p>采用定期删除+惰性删除策略；<br>在定期删除没能删除Key，也没有及时去请求Key（惰性删除没生效），这样redis内存会越来越高。此时应该采用内存淘汰机制。   </p>
-<p>redis 提供的6种数据淘汰策略：<br>noeviction<br>allkeys-lru:当内存不足以容纳新写入的数据时，在键空间中移除最近最少使用的Key.(推荐使用)<br>allkeys-random<br>volatile-lru<br>volatile-random<br>volatile-ttl</p>
+<p>redis 提供的6种数据淘汰策略：<br>noeviction<br>allkeys-lru:当内存不足以容纳新写入的数据时，在键空间中移除最近最少使用的Key.(推荐使用)<br>allkeys-random<br>volatile-lru<br>volatile-random<br>volatile-ttl  </p>
 <blockquote>
 <p>参考资料：<br>1、Redis入门指南<br>2、redis设计与实现<br>3、Redis实战用例目录  </p>
 </blockquote>
