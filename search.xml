@@ -2,6 +2,17 @@
 <search>
   <entry>
     <title><![CDATA[每日一句]]></title>
+    <url>%2F2018%2F10%2F18%2F2018-10-18%2F</url>
+    <content type="text"><![CDATA[Walking along the road of life, little by little, bit by bit, happiness. 走在漫漫人生路，点点滴滴都幸福。 18th Oct.————End————]]></content>
+      <categories>
+        <category>每日英文</category>
+      </categories>
+      <tags>
+        <tag>每日一句</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[每日一句]]></title>
     <url>%2F2018%2F10%2F17%2F2018-10-17%2F</url>
     <content type="text"><![CDATA[#今日重阳 Wait until September Double-ninth Day’s day, again to taste chrysanthemum wine. 待到重阳日，还来就菊花。 17th Oct.————End————]]></content>
       <categories>
@@ -404,8 +415,8 @@
         <category>缓存</category>
       </categories>
       <tags>
-        <tag>web缓存</tag>
         <tag>前端</tag>
+        <tag>web缓存</tag>
       </tags>
   </entry>
   <entry>
@@ -581,9 +592,9 @@
         <category>前端框架</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>设计模式</tag>
         <tag>JS</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
