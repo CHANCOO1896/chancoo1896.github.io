@@ -2,6 +2,17 @@
 <search>
   <entry>
     <title><![CDATA[每日一句]]></title>
+    <url>%2F2018%2F10%2F19%2F2018-10-19%2F</url>
+    <content type="text"><![CDATA[Do just once what others say you can’t do, and you will never pay attention to their limitations again. 只要能做一次别人都觉得你做不了的事，那之后不管他们再怎么说你不行，就都不用再在意了。 19th Oct.————End————]]></content>
+      <categories>
+        <category>每日英文</category>
+      </categories>
+      <tags>
+        <tag>每日一句</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[每日一句]]></title>
     <url>%2F2018%2F10%2F18%2F2018-10-18%2F</url>
     <content type="text"><![CDATA[Walking along the road of life, little by little, bit by bit, happiness. 走在漫漫人生路，点点滴滴都幸福。 18th Oct.————End————]]></content>
       <categories>
@@ -415,8 +426,8 @@
         <category>缓存</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>web缓存</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -592,9 +603,9 @@
         <category>前端框架</category>
       </categories>
       <tags>
+        <tag>前端</tag>
         <tag>设计模式</tag>
         <tag>JS</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
